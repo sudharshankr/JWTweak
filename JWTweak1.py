@@ -6,9 +6,9 @@ import re
 import base64
 import math
 import json
-from Cryptodome.Signature import PKCS1_v1_5, DSS, pss
-from Cryptodome.Hash import SHA256, SHA384, SHA512
-from Cryptodome.PublicKey import RSA, ECC
+from Crypto.Signature import PKCS1_v1_5, DSS, pss
+from Crypto.Hash import SHA256, SHA384, SHA512
+from Crypto.PublicKey import RSA, ECC
 
 class bcolors:
     HEADER = '\033[95m'
@@ -31,7 +31,7 @@ def jwtWeak():
     print("Enter the JWT Token:")
     in_jwt = input()
 
-    if re.match(r'^ey[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$',in_jwt):
+    if re.match(r'^ey[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$', in_jwt):
         print(f"{bcolors.OKGREEN}\nThis is a valid input JWT Token{bcolors.ENDC}")
         print(f"{bcolors.BOLD}")
 
